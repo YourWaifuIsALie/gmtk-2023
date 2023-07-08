@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://51swxtpv7jfb"]
+
+[ext_resource type="Texture2D" uid="uid://cw1rc15iw46ka" path="res://assets/widgets/cog.tres" id="1_0i2vx"]
+[ext_resource type="Texture2D" uid="uid://7wxctfd35a81" path="res://assets/widgets_click/cog.tres" id="2_en0sn"]
+[ext_resource type="Texture2D" uid="uid://cbcnmksefeww6" path="res://assets/widgets_hover/cog.tres" id="3_ucr8c"]
+[ext_resource type="Script" path="res://components/button.gd" id="4_icnj4"]
+
+[node name="OptionsCog" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_0i2vx")
+texture_pressed = ExtResource("2_en0sn")
+texture_hover = ExtResource("3_ucr8c")
+script = ExtResource("4_icnj4")
+signal_target = "button_options"

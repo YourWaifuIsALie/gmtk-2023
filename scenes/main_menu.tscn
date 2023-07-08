@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhjegivshfcta"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_pvoeh"]
+[ext_resource type="Texture2D" uid="uid://crtgjbdoocktr" path="res://assets/bg_main_menu.png" id="2_g0q75"]
+[ext_resource type="PackedScene" uid="uid://qqjg323g5ngg" path="res://components/button.tscn" id="3_5uelu"]
+[ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="4_h3n06"]
+[ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="5_oiq6u"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pvoeh")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_g0q75")
+
+[node name="PlayButton" parent="." instance=ExtResource("3_5uelu")]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 317.0
+offset_right = 496.0
+offset_bottom = 379.0
+signal_target = "button_play"
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 33.0
+offset_right = 706.0
+offset_bottom = 302.0
+theme = ExtResource("4_h3n06")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/bold_font = ExtResource("5_oiq6u")
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]Some Suitably Appropriate Long Name For A Reverse Dating Sim[/b][/center]"

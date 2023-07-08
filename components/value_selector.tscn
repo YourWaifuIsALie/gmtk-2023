@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://di4hq8o3jhtwf"]
+
+[ext_resource type="Texture2D" uid="uid://d1hmt3miinii7" path="res://assets/widgets/arrow_down.tres" id="1_1so22"]
+[ext_resource type="Texture2D" uid="uid://cl08cssetreya" path="res://assets/widgets_click/arrow_down.tres" id="2_puu5e"]
+[ext_resource type="Texture2D" uid="uid://damjfr7n5d5tw" path="res://assets/widgets_hover/arrow_down.tres" id="3_rr78j"]
+[ext_resource type="Texture2D" uid="uid://cw8j4dx3hx8jg" path="res://assets/widgets/arrow_up.tres" id="4_d1v81"]
+[ext_resource type="Texture2D" uid="uid://cihrwpkop3x1k" path="res://assets/widgets_click/arrow_up.tres" id="5_8f85o"]
+[ext_resource type="Texture2D" uid="uid://cjl5e7hqc6i88" path="res://assets/widgets_hover/arrow_up.tres" id="6_xdj7w"]
+[ext_resource type="Texture2D" uid="uid://cyyhi50hq4shf" path="res://assets/widgets/button.tres" id="7_01am3"]
+[ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="8_ahl06"]
+[ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="9_0dq5o"]
+
+[node name="ValueSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -319.0
+offset_bottom = -522.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = 163.0
+offset_bottom = 54.0
+mouse_filter = 2
+theme = ExtResource("8_ahl06")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("9_0dq5o")
+bbcode_enabled = true
+text = "[center][b]Field:[/b][/center]"
+
+[node name="Down" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_right = 208.0
+offset_bottom = 56.0
+texture_normal = ExtResource("1_1so22")
+texture_pressed = ExtResource("2_puu5e")
+texture_hover = ExtResource("3_rr78j")
+
+[node name="Up" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 1.0
+offset_right = 449.0
+offset_bottom = 65.0
+texture_normal = ExtResource("4_d1v81")
+texture_pressed = ExtResource("5_8f85o")
+texture_hover = ExtResource("6_xdj7w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 206.0
+offset_right = 390.0
+offset_bottom = 62.0
+mouse_filter = 2
+texture = ExtResource("7_01am3")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 217.0
+offset_top = 3.0
+offset_right = 376.0
+offset_bottom = 52.0
+mouse_filter = 2
+theme = ExtResource("8_ahl06")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("9_0dq5o")
+bbcode_enabled = true
+text = "[center][b]Value[/b][/center]"

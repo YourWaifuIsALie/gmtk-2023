@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://qqjg323g5ngg"]
+
+[ext_resource type="Texture2D" uid="uid://cyyhi50hq4shf" path="res://assets/widgets/button.tres" id="1_6w4i0"]
+[ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="2_88dyt"]
+[ext_resource type="Texture2D" uid="uid://cxccwno5my8k8" path="res://assets/widgets_click/button.tres" id="2_hduuk"]
+[ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="3_qndlq"]
+[ext_resource type="Texture2D" uid="uid://c5ndhfsuc5me3" path="res://assets/widgets_hover/button.tres" id="3_sfet2"]
+[ext_resource type="Script" path="res://components/button.gd" id="4_hbr1p"]
+
+[node name="Button" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_6w4i0")
+texture_pressed = ExtResource("2_hduuk")
+texture_hover = ExtResource("3_sfet2")
+script = ExtResource("4_hbr1p")
+
+[node name="Label" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 174.0
+offset_bottom = 54.0
+mouse_filter = 2
+theme = ExtResource("2_88dyt")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("3_qndlq")
+bbcode_enabled = true
+text = "[center][b]Play[/b][/center]"
