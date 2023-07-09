@@ -1,6 +1,6 @@
-[gd_scene load_steps=51 format=3 uid="uid://je1qn83cpv0v"]
+[gd_scene load_steps=59 format=3 uid="uid://je1qn83cpv0v"]
 
-[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_pnbla"]
+[ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_ef5mv"]
 [ext_resource type="AudioStream" uid="uid://d1bnsc7xseicv" path="res://assets/audio/talk_effects/sanbagarasu-01.wav" id="2_65yu5"]
 [ext_resource type="AudioStream" uid="uid://dkft524lotk38" path="res://assets/audio/talk_effects/godknows-01.wav" id="2_542aj"]
 [ext_resource type="AudioStream" uid="uid://krtr0vxlyfqs" path="res://assets/audio/talk_effects/sanbagarasu-02.wav" id="3_h3gjl"]
@@ -50,6 +50,14 @@
 [ext_resource type="AudioStream" uid="uid://copmsedjqv4uo" path="res://assets/audio/talk_effects/godknows-24.wav" id="25_mnxun"]
 [ext_resource type="AudioStream" uid="uid://8te8e2rndr47" path="res://assets/audio/talk_effects/godknows-25.wav" id="26_y6jm8"]
 [ext_resource type="AudioStream" uid="uid://dc71awnq6c10p" path="res://assets/audio/talk_effects/godknows-26.wav" id="27_jjlmb"]
+[ext_resource type="AudioStream" uid="uid://cp5js1pllq3wa" path="res://assets/audio/music/Awkward Meeting.mp3" id="51_lfogl"]
+[ext_resource type="AudioStream" uid="uid://ctvmm0cggg0fh" path="res://assets/audio/music/Devonshire Waltz Allegretto.mp3" id="51_q63ms"]
+[ext_resource type="AudioStream" uid="uid://ccfehhgjomy2q" path="res://assets/audio/music/Colorless Aura.mp3" id="52_tfs2w"]
+[ext_resource type="AudioStream" uid="uid://cug0w0rbgpsyd" path="res://assets/audio/music/Sad Trio.mp3" id="54_sl10e"]
+[ext_resource type="AudioStream" uid="uid://d2sabel5i45pd" path="res://assets/audio/music/Study And Relax.mp3" id="55_0pete"]
+[ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="56_rxohi"]
+[ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="57_4628l"]
+[ext_resource type="FontFile" uid="uid://cuopr482cfpmh" path="res://assets/fonts/Labrada-Italic.ttf" id="58_xd3to"]
 
 [node name="AudioManager" type="Control"]
 layout_mode = 3
@@ -58,11 +66,33 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_pnbla")
+script = ExtResource("1_ef5mv")
 talk_effects_high = Array[AudioStreamWAV]([ExtResource("2_542aj"), ExtResource("3_w4scl"), ExtResource("4_x4qeq"), ExtResource("5_4465x"), ExtResource("6_tvmoj"), ExtResource("7_ylus6"), ExtResource("8_e0spx"), ExtResource("9_p4lp6"), ExtResource("10_bj77w"), ExtResource("11_myd7t"), ExtResource("12_6whyw"), ExtResource("13_44qhr"), ExtResource("14_8lofy"), ExtResource("15_xc1pd"), ExtResource("16_g7thf"), ExtResource("17_tep7n"), ExtResource("18_ntyex"), ExtResource("19_g1ggv"), ExtResource("20_est5j"), ExtResource("21_0c5tm"), ExtResource("22_s3aes"), ExtResource("23_ir511"), ExtResource("24_on868"), ExtResource("25_mnxun"), ExtResource("26_y6jm8"), ExtResource("27_jjlmb")])
 talk_effects_mid = Array[AudioStreamWAV]([ExtResource("2_65yu5"), ExtResource("3_h3gjl"), ExtResource("4_lpkur"), ExtResource("5_fp3lf"), ExtResource("6_jud3v"), ExtResource("7_4vu2l"), ExtResource("8_sd4rd"), ExtResource("9_6dv41"), ExtResource("10_y7c31"), ExtResource("11_hedg3"), ExtResource("12_4cmip"), ExtResource("13_1qyu1"), ExtResource("14_raitd"), ExtResource("15_rlqum"), ExtResource("16_rng6h"), ExtResource("17_hj0k7"), ExtResource("18_10p8g"), ExtResource("19_csjeo"), ExtResource("20_2jv25"), ExtResource("21_nxdgu"), ExtResource("22_rtgah"), ExtResource("23_u71xa"), ExtResource("24_c0abn")])
+music_array = Array[AudioStreamMP3]([ExtResource("51_lfogl"), ExtResource("52_tfs2w"), ExtResource("51_q63ms"), ExtResource("54_sl10e"), ExtResource("55_0pete")])
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="TalkPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = 4.0
 pitch_scale = 1.1
-autoplay = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="MusicName" type="RichTextLabel" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = -3.0
+offset_right = 403.0
+offset_bottom = 41.0
+mouse_filter = 2
+theme = ExtResource("56_rxohi")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/bold_font = ExtResource("57_4628l")
+theme_override_fonts/italics_font = ExtResource("58_xd3to")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/italics_font_size = 20
+bbcode_enabled = true
+text = "Playing: [i]Song Name"
+scroll_active = false

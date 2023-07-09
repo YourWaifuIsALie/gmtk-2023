@@ -2,8 +2,12 @@
 	{"title": "test2a",
 		"reqs": [{"count_cry": ["==", 1]}]}, 
 	{"type": "text",
+		"speaker": "mc",
+		"music": "colorless",
+		"background": "bg_shop",
 		"text": "*whimper*",
 		"actors": [{"mc": {"pos": "right", "dir": "right", "emote": "neutral"}},
-					{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}],
-		"background": "bg_shop"}
+					{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}]},
+	{"type": "next",
+		"branches": []}
 ]

@@ -25,11 +25,17 @@ var SPEAKER_PITCHES: Dictionary = {"mc": 1.00,
 									"smart": 1.05,
 									"": 0.00}
 
-var text_speed: String = "fast"
+var text_speed: String = "normal"
+var music_volume: int = 3
+var text_volume: int = 3
+
+var flags = {}
 
 func _ready() -> void:
 	GlobalSignals.configured_options.connect(_handle_options)
 	
-func _handle_options(text_speed: String) -> void:
+func _handle_options(text_speed: String, music_volume: int, text_volume: int) -> void:
 	self.text_speed = text_speed
+	self.music_volume = music_volume
+	self.text_volume = text_volume
 	GlobalSignals.configured_global_variables.emit()

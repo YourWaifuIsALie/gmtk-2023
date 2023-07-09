@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://uu8tuimpfk1l"]
+[gd_scene load_steps=12 format=3 uid="uid://uu8tuimpfk1l"]
 
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="1_d84xq"]
 [ext_resource type="Texture2D" uid="uid://ctgcpfke5mlsy" path="res://assets/bg_shop.png" id="2_b6jav"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://cuopr482cfpmh" path="res://assets/fonts/Labrada-Italic.ttf" id="6_i3vh1"]
 [ext_resource type="FontFile" uid="uid://dvm6wb5asonrb" path="res://assets/fonts/Labrada-BoldItalic.ttf" id="7_fmatw"]
 [ext_resource type="PackedScene" uid="uid://cswc46wfrrae2" path="res://components/character.tscn" id="10_ifasc"]
+[ext_resource type="PackedScene" uid="uid://dfj1jge1ejgxq" path="res://components/button2.tscn" id="11_fo8sk"]
 
 [node name="DialogueManager" type="Node2D"]
 script = ExtResource("1_d84xq")
@@ -41,11 +42,12 @@ offset_bottom = 599.0
 mouse_filter = 2
 texture = ExtResource("2_bqex3")
 
-[node name="TextLeftName" type="RichTextLabel" parent="."]
-offset_left = 59.0
-offset_top = 410.0
-offset_right = 272.0
-offset_bottom = 459.0
+[node name="TextLeftName" type="RichTextLabel" parent="TextLeftBox"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 224.0
+offset_bottom = 60.0
 mouse_filter = 2
 theme = ExtResource("4_8drwc")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -61,11 +63,12 @@ offset_bottom = 603.0
 mouse_filter = 2
 texture = ExtResource("4_7sur1")
 
-[node name="TextRightName" type="RichTextLabel" parent="."]
-offset_left = 534.0
-offset_top = 410.0
-offset_right = 747.0
-offset_bottom = 459.0
+[node name="TextRightName" type="RichTextLabel" parent="TextRightBox"]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 15.0
+offset_right = 679.0
+offset_bottom = 64.0
 mouse_filter = 2
 theme = ExtResource("4_8drwc")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -87,3 +90,27 @@ theme_override_fonts/bold_italics_font = ExtResource("7_fmatw")
 bbcode_enabled = true
 text = "And here is a [b]bunch[/b] of text that we need to use to [b][i]simulate[/i][/b] some kind of text and hopefully it [i]can fit[/i] about three lines of bold and italics text in."
 scroll_active = false
+
+[node name="Option1" parent="." instance=ExtResource("11_fo8sk")]
+offset_left = 274.0
+offset_top = 35.0
+offset_right = 522.0
+offset_bottom = 115.0
+signal_target = "event_choice"
+text = "Option1"
+
+[node name="Option2" parent="." instance=ExtResource("11_fo8sk")]
+offset_left = 274.0
+offset_top = 138.0
+offset_right = 522.0
+offset_bottom = 218.0
+signal_target = "event_choice"
+text = "Option2"
+
+[node name="Option3" parent="." instance=ExtResource("11_fo8sk")]
+offset_left = 274.0
+offset_top = 246.0
+offset_right = 522.0
+offset_bottom = 326.0
+signal_target = "event_choice "
+text = "Option3"

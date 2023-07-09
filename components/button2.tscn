@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfj1jge1ejgxq"]
+
+[ext_resource type="PackedScene" uid="uid://qqjg323g5ngg" path="res://components/button.tscn" id="1_kx74h"]
+[ext_resource type="Texture2D" uid="uid://clqofbd7rx7uw" path="res://assets/widgets/button2.tres" id="2_lukoa"]
+[ext_resource type="Texture2D" uid="uid://dp8nhl57s5ojg" path="res://assets/widgets_click/button2.tres" id="3_enfgl"]
+[ext_resource type="Texture2D" uid="uid://boki7w4d2i4lr" path="res://assets/widgets_hover/button2.tres" id="4_whda1"]
+
+[node name="Button2" instance=ExtResource("1_kx74h")]
+texture_normal = ExtResource("2_lukoa")
+texture_pressed = ExtResource("3_enfgl")
+texture_hover = ExtResource("4_whda1")
+
+[node name="Label" parent="." index="0"]
+offset_left = 19.0
+offset_top = 12.0
+offset_right = 233.0
+offset_bottom = 61.0

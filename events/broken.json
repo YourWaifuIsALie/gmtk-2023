@@ -1,0 +1,10 @@
+[
+	{"title": "broken"}, 
+	{"type": "choice",
+		"speaker": "pc",
+		"music": "happy",
+		"background": "bg_default",
+		"text": "You broke the game! Congratulations!\n...You need to quit now.",
+		"actors": [{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}],
+		"choices": {}}
+]

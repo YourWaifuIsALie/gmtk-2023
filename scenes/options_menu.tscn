@@ -32,9 +32,9 @@ texture = ExtResource("2_tfdo4")
 [node name="OptionsTitle" type="RichTextLabel" parent="Menu"]
 layout_mode = 0
 offset_left = 105.0
-offset_top = 33.0
+offset_top = 26.0
 offset_right = 706.0
-offset_bottom = 135.0
+offset_bottom = 128.0
 mouse_filter = 2
 theme = ExtResource("3_du8xg")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -46,10 +46,10 @@ text = "[center][b]Options[/b][/center]"
 
 [node name="CreditsTitle" type="RichTextLabel" parent="Menu"]
 layout_mode = 0
-offset_left = 114.0
-offset_top = 374.0
-offset_right = 715.0
-offset_bottom = 476.0
+offset_left = 106.0
+offset_top = 318.0
+offset_right = 707.0
+offset_bottom = 420.0
 mouse_filter = 2
 theme = ExtResource("3_du8xg")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
@@ -61,25 +61,68 @@ text = "[center][b]Credits[/b][/center]"
 
 [node name="Credits" type="RichTextLabel" parent="Menu"]
 layout_mode = 0
-offset_left = 101.0
-offset_top = 454.0
-offset_right = 707.0
-offset_bottom = 576.0
+offset_left = 105.0
+offset_top = 387.0
+offset_right = 711.0
+offset_bottom = 591.0
 mouse_filter = 2
 theme = ExtResource("3_du8xg")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/bold_font = ExtResource("4_yrebx")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "Font: \"Labrada\" designed by Mercedes Jáuregui, Omnibus-Type"
+text = "Font: \"Labrada\" designed by Mercedes Jáuregui, Omnibus-Type
+Music: 
+- \"Awkward Meeting\"
+- \"Colorless Aura\"
+- \"Devonshire Waltz Allegretto\"
+- \"Sad Trio\"
+- \"Study And Relax\"
+"
 
-[node name="ValueSelector" parent="Menu" instance=ExtResource("5_rhrlq")]
+[node name="Credits2" type="RichTextLabel" parent="Menu"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 425.0
+offset_right = 734.0
+offset_bottom = 581.0
+mouse_filter = 2
+theme = ExtResource("3_du8xg")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/bold_font = ExtResource("4_yrebx")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "
+    Kevin MacLeod (incompetech.com)
+    Licensed under Creative Commons: 
+        By Attribution 4.0 License
+    http://creativecommons.org/licenses/by/4.0/"
+
+[node name="TextSpeed" parent="Menu" instance=ExtResource("5_rhrlq")]
 layout_mode = 1
-offset_left = 163.0
-offset_top = 137.0
-offset_right = 123.0
-offset_bottom = 97.0
+offset_left = 162.0
+offset_top = 118.0
+offset_right = 122.0
+offset_bottom = 78.0
 field_text = "Text Speed:"
+
+[node name="MusicVolume" parent="Menu" instance=ExtResource("5_rhrlq")]
+layout_mode = 1
+offset_left = 162.0
+offset_top = 189.0
+offset_right = 122.0
+offset_bottom = 149.0
+default_value_text = "[center]3"
+field_text = "Music Volume:"
+
+[node name="TextVolume" parent="Menu" instance=ExtResource("5_rhrlq")]
+layout_mode = 1
+offset_left = 162.0
+offset_top = 262.0
+offset_right = 122.0
+offset_bottom = 222.0
+default_value_text = "[center]3"
+field_text = "Text Volume:"
 
 [node name="OptionsCog" parent="." instance=ExtResource("2_0n4o8")]
 layout_mode = 0

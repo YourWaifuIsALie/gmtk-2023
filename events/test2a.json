@@ -2,7 +2,11 @@
 	{"title": "test2b",
 		"reqs": [{"count_cry": [">=", 2]}]}, 
 	{"type": "text",
+		"speaker": "mc",
+		"music": "depressed",
+		"background": "bg_shop",
 		"text": "[b]BWAAAAAAAAAAH~![/b]",
-		"actors": [{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}],
-		"background": "bg_shop"}
+		"actors": [{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}]},
+	{"type": "next",
+		"branches": []}
 ]

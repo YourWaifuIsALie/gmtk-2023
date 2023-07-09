@@ -1,8 +1,11 @@
 ## Loaded via autoload for global signal access 
 extends Node
 
-signal configured_options(text_speed: String)
+signal configured_options(text_speed: String, music_volume: int, text_volume: int)
 signal configured_global_variables()
+
+signal options_opened()
+signal options_closed()
 
 signal button_options()
 signal button_play()
@@ -15,9 +18,12 @@ signal transition_finish()
 
 signal audio_start_talk(type: String, pitch: float)
 signal audio_stop_talk()
+signal audio_start_music(name: String)
+signal audio_stop_music()
 
 signal event_load(event_name: String)
 signal event_begin(event_name: String)
+signal event_choice(value: String)
 
 ## Attempt to emit a signal given a name and optional value
 ## Mainly here for buttons

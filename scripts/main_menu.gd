@@ -4,9 +4,7 @@ extends Control
 func _ready() -> void:
 	GlobalSignals.button_play.connect(_begin_game)
 
-
-func _process(delta: float) -> void:
-	pass
+	GlobalSignals.audio_start_music.emit("happy")
 
 func _begin_game() -> void:
 	# TODO character creator first

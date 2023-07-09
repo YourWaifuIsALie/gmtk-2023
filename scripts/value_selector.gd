@@ -6,6 +6,7 @@ signal value_changed(new_value: int)
 @export var field_text: String = "Field:"
 @export var value_max: int = 5
 @export var value_min: int = 0
+@export var value_default: int = 3
 
 var value: int = 0
 
@@ -15,6 +16,8 @@ func _ready() -> void:
 	
 	$Label.text = self.default_value_text
 	$Name.text = "[right]" + self.field_text + "[/right]"
+	
+	self.value = self.value_default
 
 func set_value(value: String) -> void:
 	$Label.text = "[center]" + value + "[/center]"
