@@ -42,5 +42,6 @@
 		"flags": {"cry": {"count_cry": 1},
 					"cry2": {"count_cry": 5}}},
 	{"type": "next",
-		"branches": ["test2a", "test2b"]}
+		"branches": ["test2a", "test2b"],
+		"transition": "fade"}
 ]

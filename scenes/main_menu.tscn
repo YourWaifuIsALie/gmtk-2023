@@ -24,9 +24,9 @@ texture = ExtResource("2_g0q75")
 [node name="PlayButton" parent="." instance=ExtResource("3_5uelu")]
 layout_mode = 0
 offset_left = 312.0
-offset_top = 317.0
+offset_top = 280.0
 offset_right = 496.0
-offset_bottom = 379.0
+offset_bottom = 342.0
 signal_target = "button_play"
 
 [node name="Title" type="RichTextLabel" parent="."]
@@ -41,4 +41,22 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/bold_font = ExtResource("5_oiq6u")
 theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
-text = "[center][b]Some Suitably Appropriate Long Name For A Reverse Dating Sim[/b][/center]"
+text = "[center][b]Just Another 
+(Sad) 
+Visual Novel[/b][/center]"
+
+[node name="Title2" type="RichTextLabel" parent="."]
+offset_left = 659.0
+offset_top = 581.0
+offset_right = 1161.0
+offset_bottom = 812.0
+rotation = 3.14159
+theme = ExtResource("4_h3n06")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/bold_font = ExtResource("5_oiq6u")
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[center][b]Just Another 
+(Sad) 
+Visual Novel[/b][/center]"

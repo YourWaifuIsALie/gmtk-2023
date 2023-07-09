@@ -64,8 +64,10 @@ func adjust_expression() -> void:
 		"pc", "pc_work":
 			if self.is_flipped:
 				$Expression.position.x = 65
+				$Expression.position.y = 90
 			else:
 				$Expression.position.x = 20
+				$Expression.position.y = 90
 		"mc":
 			if self.is_flipped:
 				$Expression.position.x = 85

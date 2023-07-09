@@ -14,9 +14,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_8jda6"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 90, 227, 0, 0, 0, 0, -145, 229)
+"points": PackedVector2Array(0, 0, 0, 0, 90, 227, 0, 0, 0, 0, -125.605, 227.033, 0, 0, 0, 0, -145, 229)
 }
-point_count = 2
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_bwr4g"]
 _data = {
@@ -47,7 +47,7 @@ texture = ExtResource("2_b6jav")
 script = ExtResource("3_hmo5t")
 
 [node name="FarLeftPath" type="Path2D" parent="."]
-position = Vector2(24, 138)
+position = Vector2(7, 138)
 curve = SubResource("Curve2D_8jda6")
 
 [node name="FarLeftFollower" type="PathFollow2D" parent="FarLeftPath"]
@@ -89,7 +89,7 @@ position = Vector2(98, 234)
 rotation = 3.14159
 
 [node name="FarRightPath" type="Path2D" parent="."]
-position = Vector2(24, 138)
+position = Vector2(42, 138)
 curve = SubResource("Curve2D_co3um")
 
 [node name="FarRightFollower" type="PathFollow2D" parent="FarRightPath"]
@@ -145,9 +145,9 @@ bbcode_enabled = true
 text = "[center][b]Name[/b][/center]"
 
 [node name="Text" type="RichTextLabel" parent="."]
-offset_left = 104.0
+offset_left = 99.0
 offset_top = 454.0
-offset_right = 725.0
+offset_right = 715.0
 offset_bottom = 586.0
 mouse_filter = 2
 theme = ExtResource("4_8drwc")
@@ -180,5 +180,37 @@ offset_left = 274.0
 offset_top = 246.0
 offset_right = 522.0
 offset_bottom = 326.0
-signal_target = "event_choice "
+signal_target = "event_choice"
 text = "Option3"
+
+[node name="Fin" type="RichTextLabel" parent="."]
+offset_left = 351.0
+offset_top = 6.0
+offset_right = 804.0
+offset_bottom = 79.0
+mouse_filter = 2
+theme = ExtResource("4_8drwc")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/bold_font = ExtResource("5_vgeml")
+theme_override_font_sizes/bold_font_size = 50
+bbcode_enabled = true
+text = "[center][b]Fin[/b][/center]"
+
+[node name="Fin2" type="RichTextLabel" parent="."]
+offset_left = 356.0
+offset_top = 76.0
+offset_right = 798.0
+offset_bottom = 385.0
+mouse_filter = 2
+theme = ExtResource("4_8drwc")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/bold_font = ExtResource("5_vgeml")
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[center][b]I ran out of time for a happy ending or the ending graphics. 
+
+Sorry.
+
+...There's also no restart button. [/b][/center]"

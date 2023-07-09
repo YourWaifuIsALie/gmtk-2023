@@ -54,6 +54,8 @@ func _ready() -> void:
 	$TextLeftBox.hide()
 	$TextRightBox.hide()
 	$Text.text = ""
+	$Fin.hide()
+	$Fin2.hide()
 	
 	# Could iterate over child nodes and match but whatever
 #	self.character_nodes.append($CharacterFarLeft)
@@ -177,12 +179,20 @@ func _load_event(event_name: String) -> void:
 	# Preload characters
 	if "actors" in pages[1]:
 		self._change_actors(pages[1]["actors"])
+		
+	# Out-of-time ending handling
+	if event_name == "fin2":
+		$Fin.show()
+		$Fin2.show()
+		
 
 func _end_event() -> void:
+	var transition = self.current_page.get("transition", "")
+	
 	# Choose first event with filled requirements
 	for event_name in self.current_page["branches"]:
 		var is_event_valid = true
-		var first_page = self.events_dictionary[event_name][0]
+		var first_page = self.events_dictionary.get(event_name, [{}])[0]
 		var reqs = first_page.get("reqs", [])
 		for req_dict in reqs:
 			for flag_name in req_dict.keys():
@@ -211,17 +221,23 @@ func _end_event() -> void:
 						if base == value:
 							is_event_valid = false
 #				print(is_event_valid)
-		if is_event_valid:
-			self._next_event(event_name)
+		if is_event_valid and event_name in self.events_dictionary.keys():
+			self._next_event(event_name, transition)
 			return
 			
 	# Nothing is valid, missed a safe default
 	self._next_event("broken")
 
-func _next_event(name: String) -> void:
-	# TODO transition?
-	self._load_event(name)
-	self._continue_event()
+func _next_event(name: String, transition: String = "") -> void:
+	if transition != "":
+		GlobalSignals.transition_start.emit()
+		await GlobalSignals.transition_wait
+		self._load_event(name)
+		self._continue_event()
+		GlobalSignals.transition_finish.emit()
+	else:
+		self._load_event(name)
+		self._continue_event()
 
 func _continue_event() -> void:
 	self.current_page_index += 1
@@ -236,8 +252,8 @@ func _continue_event() -> void:
 	else:
 		self.current_speaker = ""
 		
-	var speaker_type = GlobalVariables.SPEAKER_TYPES[self.current_speaker]
-	var speaker_pitch = GlobalVariables.SPEAKER_PITCHES[self.current_speaker]
+	var speaker_type = GlobalVariables.SPEAKER_TYPES.get(self.current_speaker, "")
+	var speaker_pitch = GlobalVariables.SPEAKER_PITCHES.get(self.current_speaker, 1.0)
 		
 	if "background" in self.current_page:
 		self._change_background(self.current_page["background"])
@@ -284,7 +300,7 @@ func _change_choices(choices: Dictionary) -> void:
 		count += 1
 		
 func _change_background(name: String) -> void:
-	$Background.texture = self.bg_dictionary[name]
+	$Background.texture = self.bg_dictionary.get(name, self.bg_dictionary["bg_default"])
 
 func _change_music(name: String) -> void:
 	if name == "":
@@ -320,6 +336,8 @@ func _change_actors(actors: Array) -> void:
 			character_node.change_facing(dir)
 			character_node.show()
 			current_positions[actor_name] = character_node
+			var follower = current_positions[actor_name].get_parent()
+			follower.progress_ratio = 0.0
 			
 			if actor_name == self.current_speaker:
 				match(pos):
@@ -335,7 +353,7 @@ func _change_actors(actors: Array) -> void:
 		if actor_name not in self.character_previous_positions.keys():
 			var follower = current_positions[actor_name].get_parent()
 			follower.progress_ratio = 1.0
-			create_tween().tween_property(follower, "progress_ratio", 0.0, 1.0)
+			create_tween().tween_property(follower, "progress_ratio", 0.0, randf() + 0.5)
 	
 	# Actors leaving the scene
 	# Check if the speaker left as well
@@ -343,7 +361,7 @@ func _change_actors(actors: Array) -> void:
 		if actor_name not in current_positions.keys():
 			self.character_previous_positions[actor_name].show()
 			var follower = self.character_previous_positions[actor_name].get_parent()
-			create_tween().tween_property(follower, "progress_ratio", 1.0, 1.0)
+			create_tween().tween_property(follower, "progress_ratio", 1.0, randf() + 0.5)
 		if !is_speaker_present:
 			if actor_name == self.current_speaker:
 				if self.character_previous_positions[actor_name] == self.character_nodes[0] \

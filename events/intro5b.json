@@ -1,0 +1,23 @@
+[
+	{"title": "intro5b",
+		"reqs": [{"calm": [">=", 1]}]}, 
+	{"type": "text",
+		"speaker": "thought",
+		"text": "(I need to calm down.)",
+		"music": "neutral",
+		"background": "bg_shop",
+		"actors": [{"pc_work": {"pos": "right", "dir": "left", "emote": "neutral"}},
+					{"mc": {"pos": "left", "dir": "right", "emote": "neutral"}}]},
+	{"type": "text",
+		"speaker": "thought",
+		"text": "(I'm getting too excited. I can't drive away my soulmate.)",
+		"actors": [{"pc_work": {"pos": "right", "dir": "left", "emote": "neutral"}},
+					{"mc": {"pos": "left", "dir": "right", "emote": "neutral"}}]},
+	{"type": "text",
+		"speaker": "pc",
+		"text": "Ah, I'm so sorry if I bothered you. Welcome to WcRonalds. How may I help you?",
+		"actors": [{"pc_work": {"pos": "fright", "dir": "left", "emote": "neutral"}},
+					{"mc": {"pos": "left", "dir": "right", "emote": "neutral"}}]},
+	{"type": "next",
+		"branches": ["intro_end"]}
+]

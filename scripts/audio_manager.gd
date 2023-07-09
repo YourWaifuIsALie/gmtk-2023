@@ -163,6 +163,7 @@ func _handle_start_music(name: String) -> void:
 		self.music_tween.tween_callback($MusicPlayer.play)
 	else:
 		$MusicPlayer.set_stream(next_music)
+		next_music.loop = true
 		$MusicPlayer.play()
 
 func _handle_stop_music() -> void:

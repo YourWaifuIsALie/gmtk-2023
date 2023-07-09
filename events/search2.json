@@ -1,0 +1,21 @@
+[
+	{"title": "search2",
+		"reqs": []}, 
+	{"type": "text",
+		"speaker": "thought",
+		"text": "",
+		"music": "colorless",
+		"background": "bg_town",
+		"actors": [{"pc_work": {"pos": "fleft", "dir": "right", "emote": "neutral"}}]},
+	{"type": "text",
+		"speaker": "thought",
+		"text": "",
+		"actors": [{"pc_work": {"pos": "fleft", "dir": "left", "emote": "neutral"}}]},
+	{"type": "text",
+		"speaker": "pc",
+		"text": "...",
+		"actors": []},
+	{"type": "next",
+		"branches": ["search3"],
+		"transition": "fade"}
+]

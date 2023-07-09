@@ -20,6 +20,7 @@ func _begin_game() -> void:
 	await GlobalSignals.transition_wait
 	self.hide()
 	GlobalSignals.transition_finish.emit()
-	GlobalSignals.event_load.emit("test")
+	var target_event = "intro"
+	GlobalSignals.event_load.emit(target_event)
 	await GlobalSignals.transition_wait
-	GlobalSignals.event_begin.emit("test")
+	GlobalSignals.event_begin.emit(target_event)

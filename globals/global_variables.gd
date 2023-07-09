@@ -3,26 +3,29 @@ extends Node
 
 var DISPLAY_NAMES: Dictionary = {"mc": "Vee",
 								"pc": "You",
-								"pc_thought": "",
+								"thought": "",
 								"trendy": "Eyy",
 								"athletic": "Bee",
 								"smart": "Sea",
+								"manager": "Manager",
 								"": ""}
 								
 var SPEAKER_TYPES: Dictionary = {"mc": "mid",
 								"pc": "high",
-								"pc_thought": "",
+								"thought": "",
 								"trendy": "high",
 								"athletic": "mid",
 								"smart": "high",
+								"manager": "mid",
 								"": ""}
 								
 var SPEAKER_PITCHES: Dictionary = {"mc": 1.00,
 									"pc": 1.00,
-									"pc_thought": 0.00,
+									"thought": 0.00,
 									"trendy": 1.10,
 									"athletic": 0.95,
 									"smart": 1.05,
+									"manager": 1.10,
 									"": 0.00}
 
 var text_speed: String = "normal"
