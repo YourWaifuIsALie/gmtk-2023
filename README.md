@@ -108,7 +108,7 @@ Game dev focus:
 ## Study
 
 As a single-dev that works slowly, who also is creating all assets in-jam, there's a hard limit on what I can do. 
-So the dating sim idea seems good enough. 
+So **the dating sim idea seems good enough.** 
 It also get's me used to cutscenes/dialogue trees which I will need in my personal projects. 
 Mechanically simple means I can hopefully polish and make assets. Let's try it.
 
@@ -173,43 +173,48 @@ All time in hours
 
 **Day 0**
 
-0.50: Making sure Godot4 web build works
-1.00: Idea thinking + tea time
-2.00: Starting with asset gen, characters. This was pretty slow...
-1.50: Shop outfit + BGs + UI + menu concepts
-1.00: Widget sheet + variations + atlas textures & finding a font
-1.00: Main menu + options menu + buttons
-0.75: Starting dialogue engine (layout, sprites) + scene transitions
-0.50: Dialogue text drop
+- 0.50: Making sure Godot4 web build works
+- 1.00: Idea thinking + tea time
+- 2.00: Starting with asset gen, characters. This was pretty slow...
+- 1.50: Shop outfit + BGs + UI + menu concepts
+- 1.00: Widget sheet + variations + atlas textures & finding a font
+- 1.00: Main menu + options menu + buttons
+- 0.75: Starting dialogue engine (layout, sprites) + scene transitions
+- 0.50: Dialogue text drop
+
 = 8.25 hours in
 
 **Day 1**
 
-1.00: Testing build (Image.load_from_file bug), config text speed, test text advance
-1.00: Initial event json and loading
-1.25: Character bodies + expressions, text speaker, flipping adjustments
-1.50: Talking effect process, recording
-1.00: Implement voice text for dialogue (variable sound, pitch, length)
+- 1.00: Testing build (Image.load_from_file bug), config text speed, test text advance
+- 1.00: Initial event json and loading
+- 1.25: Character bodies + expressions, text speaker, flipping adjustments
+- 1.50: Talking effect process, recording
+- 1.00: Implement voice text for dialogue (variable sound, pitch, length)
+
 = 8.25 + 5.75 = 14 hours in
 
-0.25: Finding music, assessing & planing scope
-1.00: Music play + event json, adjust credits
-0.50: volume config
-0.50: updating buttons and creating dialogue choices
-0.75: choice signals + event branching
+- 0.25: Finding music, assessing & planing scope
+- 1.00: Music play + event json, adjust credits
+- 0.50: volume config
+- 0.50: updating buttons and creating dialogue choices
+- 0.75: choice signals + event branching
+
 = 14 + 3 = 17 hours in 
 
 Had some unexpected late-night (technically next-day) efforts
 
-0130-0200 0.5: character creator
-0200-0230 0.5: enter/exit animations
+- 0130-0200 0.5: character creator
+- 0200-0230 0.5: enter/exit animations
+
 = 17 + 1 = 18 hours in 
 
 **Day 2**
 
-0.50: slight randomize pos, itch page submission, scene transition
-2.50: building out event content, final cuts, final build & testing
-0.50: cover image + screenshot upload
+- 0.50: slight randomize pos, itch page submission, scene transition
+- 2.50: building out event content, final cuts, final build & testing
+- 0.50: cover image + screenshot upload
+
 = 18 + 3.5 = 21.5 hour ins
 
 Finished! 
