@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cxccwno5my8k8" path="res://assets/widgets_click/button.tres" id="2_hduuk"]
 [ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="3_qndlq"]
 [ext_resource type="Texture2D" uid="uid://c5ndhfsuc5me3" path="res://assets/widgets_hover/button.tres" id="3_sfet2"]
-[ext_resource type="Script" path="res://components/button.gd" id="4_hbr1p"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="4_s7fej"]
 
 [node name="Button" type="TextureButton"]
 offset_right = 40.0
@@ -13,7 +13,7 @@ offset_bottom = 40.0
 texture_normal = ExtResource("1_6w4i0")
 texture_pressed = ExtResource("2_hduuk")
 texture_hover = ExtResource("3_sfet2")
-script = ExtResource("4_hbr1p")
+script = ExtResource("4_s7fej")
 
 [node name="Label" type="RichTextLabel" parent="."]
 layout_mode = 0

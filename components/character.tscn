@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cswc46wfrrae2"]
+
+[ext_resource type="Texture2D" uid="uid://dk6simk2dpnmy" path="res://assets/sprites/pc/pc.tres" id="1_4cl0h"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="1_b51rn"]
+[ext_resource type="Texture2D" uid="uid://dnv3c2xfiwsgn" path="res://assets/sprites/pc/pc_exp_neutral.tres" id="2_20ywq"]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_b51rn")
+
+[node name="Body" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_4cl0h")
+
+[node name="Expression" type="TextureRect" parent="."]
+offset_left = 25.0
+offset_top = 88.0
+offset_right = 113.0
+offset_bottom = 176.0
+mouse_filter = 2
+texture = ExtResource("2_20ywq")
+stretch_mode = 2

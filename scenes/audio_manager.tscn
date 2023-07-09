@@ -1,0 +1,68 @@
+[gd_scene load_steps=51 format=3 uid="uid://je1qn83cpv0v"]
+
+[ext_resource type="Script" path="res://scenes/audio_manager.gd" id="1_pnbla"]
+[ext_resource type="AudioStream" uid="uid://d1bnsc7xseicv" path="res://assets/audio/talk_effects/sanbagarasu-01.wav" id="2_65yu5"]
+[ext_resource type="AudioStream" uid="uid://dkft524lotk38" path="res://assets/audio/talk_effects/godknows-01.wav" id="2_542aj"]
+[ext_resource type="AudioStream" uid="uid://krtr0vxlyfqs" path="res://assets/audio/talk_effects/sanbagarasu-02.wav" id="3_h3gjl"]
+[ext_resource type="AudioStream" uid="uid://b6saitrgcq2xl" path="res://assets/audio/talk_effects/godknows-02.wav" id="3_w4scl"]
+[ext_resource type="AudioStream" uid="uid://bnysdv6pgbogc" path="res://assets/audio/talk_effects/sanbagarasu-03.wav" id="4_lpkur"]
+[ext_resource type="AudioStream" uid="uid://b1oy6mvj32ck1" path="res://assets/audio/talk_effects/godknows-03.wav" id="4_x4qeq"]
+[ext_resource type="AudioStream" uid="uid://c3n3f8i7jghbc" path="res://assets/audio/talk_effects/godknows-04.wav" id="5_4465x"]
+[ext_resource type="AudioStream" uid="uid://sypn4at63xk2" path="res://assets/audio/talk_effects/sanbagarasu-04.wav" id="5_fp3lf"]
+[ext_resource type="AudioStream" uid="uid://cx2b2kmjcukne" path="res://assets/audio/talk_effects/sanbagarasu-05.wav" id="6_jud3v"]
+[ext_resource type="AudioStream" uid="uid://cwpw2j0yufpbn" path="res://assets/audio/talk_effects/godknows-05.wav" id="6_tvmoj"]
+[ext_resource type="AudioStream" uid="uid://bfny2ggdfnw48" path="res://assets/audio/talk_effects/sanbagarasu-06.wav" id="7_4vu2l"]
+[ext_resource type="AudioStream" uid="uid://bheev0pxyfyyi" path="res://assets/audio/talk_effects/godknows-06.wav" id="7_ylus6"]
+[ext_resource type="AudioStream" uid="uid://bt6kyaeu37vv2" path="res://assets/audio/talk_effects/godknows-07.wav" id="8_e0spx"]
+[ext_resource type="AudioStream" uid="uid://6eguaf2vqmen" path="res://assets/audio/talk_effects/sanbagarasu-07.wav" id="8_sd4rd"]
+[ext_resource type="AudioStream" uid="uid://dfubtqmfcknvi" path="res://assets/audio/talk_effects/sanbagarasu-08.wav" id="9_6dv41"]
+[ext_resource type="AudioStream" uid="uid://c312fcrghs7vc" path="res://assets/audio/talk_effects/godknows-08.wav" id="9_p4lp6"]
+[ext_resource type="AudioStream" uid="uid://dwmjpstme68dc" path="res://assets/audio/talk_effects/godknows-09.wav" id="10_bj77w"]
+[ext_resource type="AudioStream" uid="uid://bpjs1rj45alva" path="res://assets/audio/talk_effects/sanbagarasu-09.wav" id="10_y7c31"]
+[ext_resource type="AudioStream" uid="uid://p80834ox55dr" path="res://assets/audio/talk_effects/sanbagarasu-10.wav" id="11_hedg3"]
+[ext_resource type="AudioStream" uid="uid://tivy3ur36e8g" path="res://assets/audio/talk_effects/godknows-10.wav" id="11_myd7t"]
+[ext_resource type="AudioStream" uid="uid://cy8ayydbqe3dn" path="res://assets/audio/talk_effects/sanbagarasu-11.wav" id="12_4cmip"]
+[ext_resource type="AudioStream" uid="uid://bttxlbqqcu33" path="res://assets/audio/talk_effects/godknows-11.wav" id="12_6whyw"]
+[ext_resource type="AudioStream" uid="uid://bi5y8to2gkuvc" path="res://assets/audio/talk_effects/sanbagarasu-12.wav" id="13_1qyu1"]
+[ext_resource type="AudioStream" uid="uid://nybwhis6ijjy" path="res://assets/audio/talk_effects/godknows-12.wav" id="13_44qhr"]
+[ext_resource type="AudioStream" uid="uid://bps7lmc2m44g6" path="res://assets/audio/talk_effects/godknows-13.wav" id="14_8lofy"]
+[ext_resource type="AudioStream" uid="uid://ee1ashak74sk" path="res://assets/audio/talk_effects/sanbagarasu-13.wav" id="14_raitd"]
+[ext_resource type="AudioStream" uid="uid://b2xoi5p8bwk3p" path="res://assets/audio/talk_effects/sanbagarasu-14.wav" id="15_rlqum"]
+[ext_resource type="AudioStream" uid="uid://cigcldrnwpsxo" path="res://assets/audio/talk_effects/godknows-14.wav" id="15_xc1pd"]
+[ext_resource type="AudioStream" uid="uid://c3qfhewkgtiq0" path="res://assets/audio/talk_effects/godknows-15.wav" id="16_g7thf"]
+[ext_resource type="AudioStream" uid="uid://7lgm22oj7uuo" path="res://assets/audio/talk_effects/sanbagarasu-15.wav" id="16_rng6h"]
+[ext_resource type="AudioStream" uid="uid://jstp553fuko5" path="res://assets/audio/talk_effects/sanbagarasu-16.wav" id="17_hj0k7"]
+[ext_resource type="AudioStream" uid="uid://dmfoplc8fqh3l" path="res://assets/audio/talk_effects/godknows-16.wav" id="17_tep7n"]
+[ext_resource type="AudioStream" uid="uid://dhti4kik7g8km" path="res://assets/audio/talk_effects/sanbagarasu-17.wav" id="18_10p8g"]
+[ext_resource type="AudioStream" uid="uid://ksoxohx8l3ay" path="res://assets/audio/talk_effects/godknows-17.wav" id="18_ntyex"]
+[ext_resource type="AudioStream" uid="uid://lxi8a82gubnt" path="res://assets/audio/talk_effects/sanbagarasu-18.wav" id="19_csjeo"]
+[ext_resource type="AudioStream" uid="uid://djmqtqwllabvi" path="res://assets/audio/talk_effects/godknows-18.wav" id="19_g1ggv"]
+[ext_resource type="AudioStream" uid="uid://pwnvd4dta5lh" path="res://assets/audio/talk_effects/sanbagarasu-19.wav" id="20_2jv25"]
+[ext_resource type="AudioStream" uid="uid://da2o0igovh0k3" path="res://assets/audio/talk_effects/godknows-19.wav" id="20_est5j"]
+[ext_resource type="AudioStream" uid="uid://ds7oosv043cf2" path="res://assets/audio/talk_effects/godknows-20.wav" id="21_0c5tm"]
+[ext_resource type="AudioStream" uid="uid://dhioii1vc5ueg" path="res://assets/audio/talk_effects/sanbagarasu-20.wav" id="21_nxdgu"]
+[ext_resource type="AudioStream" uid="uid://cvqtnj7fgddnq" path="res://assets/audio/talk_effects/sanbagarasu-21.wav" id="22_rtgah"]
+[ext_resource type="AudioStream" uid="uid://c57xoa71qgfv4" path="res://assets/audio/talk_effects/godknows-21.wav" id="22_s3aes"]
+[ext_resource type="AudioStream" uid="uid://cted7dck82hwx" path="res://assets/audio/talk_effects/godknows-22.wav" id="23_ir511"]
+[ext_resource type="AudioStream" uid="uid://yky1f2ndt21p" path="res://assets/audio/talk_effects/sanbagarasu-22.wav" id="23_u71xa"]
+[ext_resource type="AudioStream" uid="uid://nx2cul7hv8qn" path="res://assets/audio/talk_effects/sanbagarasu-23.wav" id="24_c0abn"]
+[ext_resource type="AudioStream" uid="uid://knavlyt2coda" path="res://assets/audio/talk_effects/godknows-23.wav" id="24_on868"]
+[ext_resource type="AudioStream" uid="uid://copmsedjqv4uo" path="res://assets/audio/talk_effects/godknows-24.wav" id="25_mnxun"]
+[ext_resource type="AudioStream" uid="uid://8te8e2rndr47" path="res://assets/audio/talk_effects/godknows-25.wav" id="26_y6jm8"]
+[ext_resource type="AudioStream" uid="uid://dc71awnq6c10p" path="res://assets/audio/talk_effects/godknows-26.wav" id="27_jjlmb"]
+
+[node name="AudioManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pnbla")
+talk_effects_high = Array[AudioStreamWAV]([ExtResource("2_542aj"), ExtResource("3_w4scl"), ExtResource("4_x4qeq"), ExtResource("5_4465x"), ExtResource("6_tvmoj"), ExtResource("7_ylus6"), ExtResource("8_e0spx"), ExtResource("9_p4lp6"), ExtResource("10_bj77w"), ExtResource("11_myd7t"), ExtResource("12_6whyw"), ExtResource("13_44qhr"), ExtResource("14_8lofy"), ExtResource("15_xc1pd"), ExtResource("16_g7thf"), ExtResource("17_tep7n"), ExtResource("18_ntyex"), ExtResource("19_g1ggv"), ExtResource("20_est5j"), ExtResource("21_0c5tm"), ExtResource("22_s3aes"), ExtResource("23_ir511"), ExtResource("24_on868"), ExtResource("25_mnxun"), ExtResource("26_y6jm8"), ExtResource("27_jjlmb")])
+talk_effects_mid = Array[AudioStreamWAV]([ExtResource("2_65yu5"), ExtResource("3_h3gjl"), ExtResource("4_lpkur"), ExtResource("5_fp3lf"), ExtResource("6_jud3v"), ExtResource("7_4vu2l"), ExtResource("8_sd4rd"), ExtResource("9_6dv41"), ExtResource("10_y7c31"), ExtResource("11_hedg3"), ExtResource("12_4cmip"), ExtResource("13_1qyu1"), ExtResource("14_raitd"), ExtResource("15_rlqum"), ExtResource("16_rng6h"), ExtResource("17_hj0k7"), ExtResource("18_10p8g"), ExtResource("19_csjeo"), ExtResource("20_2jv25"), ExtResource("21_nxdgu"), ExtResource("22_rtgah"), ExtResource("23_u71xa"), ExtResource("24_c0abn")])
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 4.0
+pitch_scale = 1.1
+autoplay = true

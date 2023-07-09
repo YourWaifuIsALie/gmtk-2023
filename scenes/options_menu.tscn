@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://crtgjbdoocktr" path="res://assets/bg_main_menu.png" id="2_tfdo4"]
 [ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="3_du8xg"]
 [ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="4_yrebx"]
-[ext_resource type="PackedScene" uid="uid://di4hq8o3jhtwf" path="res://components/value_selector.tscn" id="5_owshu"]
+[ext_resource type="PackedScene" uid="uid://di4hq8o3jhtwf" path="res://components/value_selector.tscn" id="5_rhrlq"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -44,26 +44,6 @@ theme_override_font_sizes/bold_font_size = 50
 bbcode_enabled = true
 text = "[center][b]Options[/b][/center]"
 
-[node name="ValueSelector" parent="Menu" instance=ExtResource("5_owshu")]
-layout_mode = 1
-offset_left = 175.0
-offset_top = 144.0
-offset_right = 175.0
-offset_bottom = 144.0
-
-[node name="Name" parent="Menu/ValueSelector" index="0"]
-offset_left = -19.0
-offset_top = 0.0
-offset_right = 147.0
-offset_bottom = 49.0
-text = "[center][b]Text Speed:[/b][/center]"
-
-[node name="Label" parent="Menu/ValueSelector" index="4"]
-offset_left = 223.0
-offset_top = 0.0
-offset_right = 382.0
-offset_bottom = 49.0
-
 [node name="CreditsTitle" type="RichTextLabel" parent="Menu"]
 layout_mode = 0
 offset_left = 114.0
@@ -93,10 +73,16 @@ theme_override_font_sizes/normal_font_size = 22
 bbcode_enabled = true
 text = "Font: \"Labrada\" designed by Mercedes Jáuregui, Omnibus-Type"
 
+[node name="ValueSelector" parent="Menu" instance=ExtResource("5_rhrlq")]
+layout_mode = 1
+offset_left = 163.0
+offset_top = 137.0
+offset_right = 123.0
+offset_bottom = 97.0
+field_text = "Text Speed:"
+
 [node name="OptionsCog" parent="." instance=ExtResource("2_0n4o8")]
 layout_mode = 0
 offset_left = 712.0
 offset_right = 800.0
 offset_bottom = 80.0
-
-[editable path="Menu/ValueSelector"]

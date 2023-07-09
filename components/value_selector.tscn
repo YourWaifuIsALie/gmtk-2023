@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://di4hq8o3jhtwf"]
+[gd_scene load_steps=11 format=3 uid="uid://di4hq8o3jhtwf"]
 
-[ext_resource type="Texture2D" uid="uid://d1hmt3miinii7" path="res://assets/widgets/arrow_down.tres" id="1_1so22"]
+[ext_resource type="Script" path="res://scripts/value_selector.gd" id="1_b8l1y"]
 [ext_resource type="Texture2D" uid="uid://cl08cssetreya" path="res://assets/widgets_click/arrow_down.tres" id="2_puu5e"]
 [ext_resource type="Texture2D" uid="uid://damjfr7n5d5tw" path="res://assets/widgets_hover/arrow_down.tres" id="3_rr78j"]
+[ext_resource type="Texture2D" uid="uid://d1hmt3miinii7" path="res://assets/widgets/arrow_down.tres" id="4_4gtb0"]
 [ext_resource type="Texture2D" uid="uid://cw8j4dx3hx8jg" path="res://assets/widgets/arrow_up.tres" id="4_d1v81"]
 [ext_resource type="Texture2D" uid="uid://cihrwpkop3x1k" path="res://assets/widgets_click/arrow_up.tres" id="5_8f85o"]
 [ext_resource type="Texture2D" uid="uid://cjl5e7hqc6i88" path="res://assets/widgets_hover/arrow_up.tres" id="6_xdj7w"]
@@ -19,12 +20,13 @@ offset_right = -319.0
 offset_bottom = -522.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_b8l1y")
 
 [node name="Name" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 4.0
 offset_top = 5.0
-offset_right = 163.0
+offset_right = 147.0
 offset_bottom = 54.0
 mouse_filter = 2
 theme = ExtResource("8_ahl06")
@@ -38,7 +40,7 @@ layout_mode = 0
 offset_left = 144.0
 offset_right = 208.0
 offset_bottom = 56.0
-texture_normal = ExtResource("1_1so22")
+texture_normal = ExtResource("4_4gtb0")
 texture_pressed = ExtResource("2_puu5e")
 texture_hover = ExtResource("3_rr78j")
 

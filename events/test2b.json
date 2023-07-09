@@ -1,0 +1,9 @@
+[
+	{"title": "test2a",
+		"reqs": [{"count_cry": ["==", 1]}]}, 
+	{"type": "text",
+		"text": "*whimper*",
+		"actors": [{"mc": {"pos": "right", "dir": "right", "emote": "neutral"}},
+					{"pc": {"pos": "left", "dir": "right", "emote": "neutral"}}],
+		"background": "bg_shop"}
+]

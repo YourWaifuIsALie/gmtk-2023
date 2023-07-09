@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://uu8tuimpfk1l"]
+[gd_scene load_steps=11 format=3 uid="uid://uu8tuimpfk1l"]
 
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="1_d84xq"]
 [ext_resource type="Texture2D" uid="uid://ctgcpfke5mlsy" path="res://assets/bg_shop.png" id="2_b6jav"]
 [ext_resource type="Texture2D" uid="uid://bs21y0irp1a0q" path="res://assets/widgets/text_left.tres" id="2_bqex3"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="3_hmo5t"]
 [ext_resource type="Texture2D" uid="uid://dtymipgbotro5" path="res://assets/widgets/text_right.tres" id="4_7sur1"]
 [ext_resource type="Theme" uid="uid://crcwqj3itilwv" path="res://components/theme.tres" id="4_8drwc"]
 [ext_resource type="FontFile" uid="uid://cgw4qlayyi1n8" path="res://assets/fonts/Labrada-Bold.ttf" id="5_vgeml"]
 [ext_resource type="FontFile" uid="uid://cuopr482cfpmh" path="res://assets/fonts/Labrada-Italic.ttf" id="6_i3vh1"]
 [ext_resource type="FontFile" uid="uid://dvm6wb5asonrb" path="res://assets/fonts/Labrada-BoldItalic.ttf" id="7_fmatw"]
+[ext_resource type="PackedScene" uid="uid://cswc46wfrrae2" path="res://components/character.tscn" id="10_ifasc"]
 
 [node name="DialogueManager" type="Node2D"]
 script = ExtResource("1_d84xq")
@@ -17,6 +19,19 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 0
 texture = ExtResource("2_b6jav")
+script = ExtResource("3_hmo5t")
+
+[node name="CharacterFarLeft" parent="." instance=ExtResource("10_ifasc")]
+position = Vector2(24, 138)
+
+[node name="CharacterLeft" parent="." instance=ExtResource("10_ifasc")]
+position = Vector2(189, 137)
+
+[node name="CharacterRight" parent="." instance=ExtResource("10_ifasc")]
+position = Vector2(407, 137)
+
+[node name="CharacterFarRight" parent="." instance=ExtResource("10_ifasc")]
+position = Vector2(577, 136)
 
 [node name="TextLeftBox" type="TextureRect" parent="."]
 offset_left = 48.0
