@@ -7,6 +7,3 @@ func _init() -> void:
 func _ready() -> void:
 	$CSGBox3D/AnimationPlayer.play("spin")
 	print("Main Ready")
-
-func _process(delta: float) -> void:
-	pass

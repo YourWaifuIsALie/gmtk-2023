@@ -9,6 +9,9 @@ signal options_closed()
 
 signal button_options()
 signal button_play()
+signal button_confirm()
+
+signal scene_switch(name: String)
 
 signal click_empty()
 

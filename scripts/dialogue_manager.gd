@@ -25,6 +25,8 @@ var current_flag_results: Dictionary = {}
 var character_nodes: Array = []
 var choice_nodes: Array = []
 
+var character_previous_positions: Dictionary = {}
+
 var is_finished_talking: bool = false
 
 func _ready() -> void:
@@ -54,10 +56,14 @@ func _ready() -> void:
 	$Text.text = ""
 	
 	# Could iterate over child nodes and match but whatever
-	self.character_nodes.append($CharacterFarLeft)
-	self.character_nodes.append($CharacterLeft)
-	self.character_nodes.append($CharacterRight)
-	self.character_nodes.append($CharacterFarRight)
+#	self.character_nodes.append($CharacterFarLeft)
+#	self.character_nodes.append($CharacterLeft)
+#	self.character_nodes.append($CharacterRight)
+#	self.character_nodes.append($CharacterFarRight)
+	self.character_nodes.append($FarLeftPath/FarLeftFollower/CharacterFarLeft)
+	self.character_nodes.append($LeftPath/LeftFollower/CharacterLeft)
+	self.character_nodes.append($RightPath/RightFollower/CharacterRight)
+	self.character_nodes.append($FarRightPath/FarRightFollower/CharacterFarRight)
 	for node in self.character_nodes:
 		node.hide()
 		
@@ -68,6 +74,13 @@ func _ready() -> void:
 		node.hide()
 	
 	self.change_speed(GlobalVariables.text_speed)
+
+	# Testing exit animations
+#	var tween = create_tween()
+#	tween.tween_property($Path2D/PathFollow2D, "progress_ratio", 1.0, 1.0)
+#	tween.tween_callback($Path2D/PathFollow2D.set_progress_ratio.bind(0.0))
+#	tween.tween_callback($Path2D/PathFollow2D.set_progress_ratio.bind(1.0))
+#	tween.tween_property($Path2D/PathFollow2D, "progress_ratio", 0.0, 1.0)
 
 func _process(delta: float) -> void:
 	if self.dialogue_step == 0.0:
@@ -166,7 +179,6 @@ func _load_event(event_name: String) -> void:
 		self._change_actors(pages[1]["actors"])
 
 func _end_event() -> void:
-	print(GlobalVariables.flags)
 	# Choose first event with filled requirements
 	for event_name in self.current_page["branches"]:
 		var is_event_valid = true
@@ -281,6 +293,9 @@ func _change_music(name: String) -> void:
 		GlobalSignals.audio_start_music.emit(name)
 
 func _change_actors(actors: Array) -> void:
+	var current_positions = {}
+	var is_speaker_present = false
+	
 	for node in self.character_nodes:
 		node.hide()
 		
@@ -292,26 +307,53 @@ func _change_actors(actors: Array) -> void:
 			
 			var character_node: Character
 			match(pos):
-				"left":
-					character_node = $CharacterLeft
 				"fleft":
-					character_node = $CharacterFarLeft
+					character_node = self.character_nodes[0]
+				"left":
+					character_node = self.character_nodes[1]
 				"right":
-					character_node = $CharacterRight
+					character_node = self.character_nodes[2]
 				"fright":
-					character_node = $CharacterFarRight
+					character_node = self.character_nodes[3]
 			character_node.change_body(actor_name)
 			character_node.change_expression(emote)
 			character_node.change_facing(dir)
 			character_node.show()
+			current_positions[actor_name] = character_node
 			
 			if actor_name == self.current_speaker:
 				match(pos):
 					"left", "fleft":
 						self.current_speaking_side = "left"
+						is_speaker_present = true
 					"right", "fright":
 						self.current_speaking_side = "right"
-		
+						is_speaker_present = true
+						
+	# Actors entering the scene
+	for actor_name in current_positions.keys():
+		if actor_name not in self.character_previous_positions.keys():
+			var follower = current_positions[actor_name].get_parent()
+			follower.progress_ratio = 1.0
+			create_tween().tween_property(follower, "progress_ratio", 0.0, 1.0)
+	
+	# Actors leaving the scene
+	# Check if the speaker left as well
+	for actor_name in self.character_previous_positions.keys():
+		if actor_name not in current_positions.keys():
+			self.character_previous_positions[actor_name].show()
+			var follower = self.character_previous_positions[actor_name].get_parent()
+			create_tween().tween_property(follower, "progress_ratio", 1.0, 1.0)
+		if !is_speaker_present:
+			if actor_name == self.current_speaker:
+				if self.character_previous_positions[actor_name] == self.character_nodes[0] \
+					or self.character_previous_positions[actor_name] == self.character_nodes[1]:
+						self.current_speaking_side = "left"
+				if self.character_previous_positions[actor_name] == self.character_nodes[2] \
+					or self.character_previous_positions[actor_name] == self.character_nodes[3]:
+						self.current_speaking_side = "right"
+						
+	self.character_previous_positions = current_positions
 
 func draw_text(text: String, speaker: String = "", direction: String = "") -> void:
 	$Text.text = ""

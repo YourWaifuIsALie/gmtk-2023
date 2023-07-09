@@ -2,7 +2,7 @@
 	{"title": "test2b",
 		"reqs": [{"count_cry": [">=", 2]}]}, 
 	{"type": "text",
-		"speaker": "mc",
+		"speaker": "pc",
 		"music": "depressed",
 		"background": "bg_shop",
 		"text": "[b]BWAAAAAAAAAAH~![/b]",

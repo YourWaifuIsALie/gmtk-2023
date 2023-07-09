@@ -2,7 +2,7 @@
 	{"title": "test2a",
 		"reqs": [{"count_cry": ["==", 1]}]}, 
 	{"type": "text",
-		"speaker": "mc",
+		"speaker": "pc",
 		"music": "colorless",
 		"background": "bg_shop",
 		"text": "*whimper*",

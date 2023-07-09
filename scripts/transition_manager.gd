@@ -8,16 +8,13 @@ func _ready() -> void:
 	$FadeBlack/AnimationPlayer.play("FadeIn")
 
 func _start_transition() -> void:
-	print("Transition Start")
 	$FadeBlack.mouse_filter = MOUSE_FILTER_STOP
 	$FadeBlack/AnimationPlayer.play("FadeOut")
 
 func _wait_transition(anim_name: String) -> void:
-	print("Transition Wait")
 	GlobalSignals.transition_wait.emit()
 
 func _finish_transition() -> void:
-	print("Transition Finish")
 	$FadeBlack.mouse_filter = MOUSE_FILTER_IGNORE
 	$FadeBlack/AnimationPlayer.play("FadeIn")
 	

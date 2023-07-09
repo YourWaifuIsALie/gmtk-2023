@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uu8tuimpfk1l"]
+[gd_scene load_steps=16 format=3 uid="uid://uu8tuimpfk1l"]
 
 [ext_resource type="Script" path="res://scripts/dialogue_manager.gd" id="1_d84xq"]
 [ext_resource type="Texture2D" uid="uid://ctgcpfke5mlsy" path="res://assets/bg_shop.png" id="2_b6jav"]
@@ -12,6 +12,30 @@
 [ext_resource type="PackedScene" uid="uid://cswc46wfrrae2" path="res://components/character.tscn" id="10_ifasc"]
 [ext_resource type="PackedScene" uid="uid://dfj1jge1ejgxq" path="res://components/button2.tscn" id="11_fo8sk"]
 
+[sub_resource type="Curve2D" id="Curve2D_8jda6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 90, 227, 0, 0, 0, 0, -145, 229)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_bwr4g"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 255, 227, 0, 0, 0, 0, -142, 229)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_jju44"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 477, 232, 0, 0, 0, 0, 998, 230)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_co3um"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 640, 227, 0, 0, 0, 0, 992, 236)
+}
+point_count = 2
+
 [node name="DialogueManager" type="Node2D"]
 script = ExtResource("1_d84xq")
 
@@ -22,17 +46,61 @@ mouse_filter = 0
 texture = ExtResource("2_b6jav")
 script = ExtResource("3_hmo5t")
 
-[node name="CharacterFarLeft" parent="." instance=ExtResource("10_ifasc")]
+[node name="FarLeftPath" type="Path2D" parent="."]
 position = Vector2(24, 138)
+curve = SubResource("Curve2D_8jda6")
 
-[node name="CharacterLeft" parent="." instance=ExtResource("10_ifasc")]
-position = Vector2(189, 137)
+[node name="FarLeftFollower" type="PathFollow2D" parent="FarLeftPath"]
+position = Vector2(90, 227)
+rotation = -3.14159
+rotates = false
+loop = false
 
-[node name="CharacterRight" parent="." instance=ExtResource("10_ifasc")]
-position = Vector2(407, 137)
+[node name="CharacterFarLeft" parent="FarLeftPath/FarLeftFollower" instance=ExtResource("10_ifasc")]
+position = Vector2(90, 229)
+rotation = 3.14159
 
-[node name="CharacterFarRight" parent="." instance=ExtResource("10_ifasc")]
-position = Vector2(577, 136)
+[node name="LeftPath" type="Path2D" parent="."]
+position = Vector2(24, 138)
+curve = SubResource("Curve2D_bwr4g")
+
+[node name="LeftFollower" type="PathFollow2D" parent="LeftPath"]
+position = Vector2(255, 227)
+rotation = -3.14159
+rotates = false
+loop = false
+
+[node name="CharacterLeft" parent="LeftPath/LeftFollower" instance=ExtResource("10_ifasc")]
+position = Vector2(85, 229)
+rotation = 3.14159
+
+[node name="RightPath" type="Path2D" parent="."]
+position = Vector2(24, 138)
+curve = SubResource("Curve2D_jju44")
+
+[node name="RightFollower" type="PathFollow2D" parent="RightPath"]
+position = Vector2(477, 232)
+rotation = -3.14159
+rotates = false
+loop = false
+
+[node name="CharacterRight" parent="RightPath/RightFollower" instance=ExtResource("10_ifasc")]
+position = Vector2(98, 234)
+rotation = 3.14159
+
+[node name="FarRightPath" type="Path2D" parent="."]
+position = Vector2(24, 138)
+curve = SubResource("Curve2D_co3um")
+
+[node name="FarRightFollower" type="PathFollow2D" parent="FarRightPath"]
+position = Vector2(640, 227)
+rotation = -3.14159
+rotates = false
+loop = false
+
+[node name="CharacterFarRight" parent="FarRightPath/FarRightFollower" instance=ExtResource("10_ifasc")]
+position = Vector2(88, 229)
+rotation = 3.14159
 
 [node name="TextLeftBox" type="TextureRect" parent="."]
 offset_left = 48.0

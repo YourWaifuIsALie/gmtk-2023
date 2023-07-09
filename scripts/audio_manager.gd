@@ -150,6 +150,10 @@ func _handle_stop_talk() -> void:
 func _handle_start_music(name: String) -> void:
 	var adjustment = self.music_adjustment.get(name, 0.0)
 	var next_music = self.music_array[self.music_index_dictionary[name]]
+	
+	if $MusicPlayer.get_stream() == next_music:
+		return
+	
 	$MusicName.text = "Playing: [i]" + self.music_names[name]
 	if $MusicPlayer.playing:
 		self._handle_stop_music()

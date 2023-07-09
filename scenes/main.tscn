@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bm8s8d0ygumib"]
+[gd_scene load_steps=14 format=3 uid="uid://bm8s8d0ygumib"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_gy6be"]
 [ext_resource type="Texture2D" uid="uid://c38t6ocxc15rg" path="res://assets/bg_default.png" id="2_lligu"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://je1qn83cpv0v" path="res://scenes/audio_manager.tscn" id="3_uirec"]
 [ext_resource type="PackedScene" uid="uid://4xasoh6mv2k5" path="res://scenes/transition_manager.tscn" id="4_1dgyb"]
 [ext_resource type="PackedScene" uid="uid://hm17lkxgu75w" path="res://scenes/options_menu.tscn" id="4_46kkk"]
+[ext_resource type="PackedScene" uid="uid://dmthe78eoitad" path="res://scenes/character_creator.tscn" id="6_jniiv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_b6jds"]
 
@@ -64,6 +65,8 @@ texture = ExtResource("2_lligu")
 [node name="DialogueManager" parent="." instance=ExtResource("3_crj6p")]
 
 [node name="MainMenu" parent="." instance=ExtResource("3_1vfue")]
+
+[node name="CharacterCreator" parent="." instance=ExtResource("6_jniiv")]
 
 [node name="OptionsMenu" parent="." instance=ExtResource("4_46kkk")]
 
